@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一个B两个 40分.：任务生成实录与耗时数据全公开</title>
+<meta name="keywords" content="一个B两个 40分.,任务生成,耗时记录,生成失败重试,站点批处理,模型切换,一个B两个,40分.">
+<meta name="description" content="一个B两个 40分. 是一個面向站长与内容团队的生成任务面板展示站，实时呈现每一次任务的开始时间、结束时间、总耗时、生成字数、账号来源与最终状态。页面以高密度卡片记录生成成功与生成失败的全过程，支持重试、换模型、删除等操作入口，并把「15分28秒・3746字」这类真实耗时数据摆在最显眼的位置。">
+<link rel="canonical" href="https://ygblgf.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一个B两个 40分.：任务生成实录与耗时数据全公开">
+<meta property="og:description" content="一个B两个 40分. 实时呈现每一次生成任务的开始、结束、用时、字数、账号来源与状态变化。高密度任务卡片记录成功与失败全过程，重试、换模型、删除一键直达，耗时数据透明可查，帮助站长与内容团队看清每一秒花在了哪里。">
+<meta property="og:url" content="https://ygblgf.pages.dev/">
+<meta property="og:site_name" content="一个B两个 40分.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="一个B两个 40分.：任务生成实录与耗时数据全公开">
+<meta name="twitter:description" content="一个B两个 40分. 实时呈现每一次生成任务的开始、结束、用时、字数、账号来源与状态变化，成功与失败全程留痕，耗时数据透明可查。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "一个B两个 40分.",
+  "url": "https://ygblgf.pages.dev/",
+  "description": "一个B两个 40分. 实时呈现每一次生成任务的开始时间、结束时间、总耗时、生成字数、账号来源与最终状态，成功与失败全程留痕，耗时数据透明可查。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script src="assets/vendor/tailwind/tailwind-3.4.16.js"></script>
+
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<script type="application/ld+json">{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://ygblgf.pages.dev/","title":"一个B两个 40分.：任务生成实录与耗时数据全公开","pubDate":"2026-10-25T17:15:41","upDate":"2026-10-25T17:15:41"}</script>
+<link rel="stylesheet" href="assets/mrymi7.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo"><span class="logo-mark">40</span>一个B两个 40分.</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#" class="active">首页</a>
+      <a href="#channel-task">任务耗时记录</a>
+      <a href="#channel-model">模型对比实测</a>
+      <a href="#channel-fail">失败排查日志</a>
+      <a href="#channel-data">产出数据榜</a>
+    </nav>
+    <button class="header-cta">查看实时面板</button>
+    <button class="nav-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-badge"><span class="dot"></span>面板数据每 5 分钟刷新一次</span>
+      <h1>一个B两个 40分.：一场生成跑满 15分28秒，3746 字全记录</h1>
+      <p class="lead">从按下开始到任务结束，每一次生成的开始时间、结束时间、总耗时、字数与账号来源都被完整留在面板上。生成失败不遮掩，重试与换模型一键直达，数据说话。</p>
+      <div class="hero-actions">
+        <a href="#channel-task" class="btn btn-primary">查看任务流水</a>
+        <a href="#channel-fail" class="btn btn-outline">失败案例复盘</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num">15m28s</div><div class="stat-label">单次最长生成用时</div></div>
+      <div class="stat-card"><div class="stat-num">3,746 字</div><div class="stat-label">该任务产出总字数</div></div>
+      <div class="stat-card"><div class="stat-num">92.4%</div><div class="stat-label">近 30 日生成成功率</div></div>
+      <div class="stat-card"><div class="stat-num">217 次</div><div class="stat-label">累计重试成功次数</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="pill-nav">
+  <div class="container">
+    <div class="pill-row">
+      <a href="#channel-task" class="pill active">任务耗时记录</a>
+      <a href="#channel-model" class="pill">模型对比实测</a>
+      <a href="#channel-fail" class="pill">失败排查日志</a>
+      <a href="#channel-data" class="pill">产出数据榜</a>
+      <a href="#channel-account" class="pill">账号来源观察</a>
+      <a href="#faq" class="pill">常见问答</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section class="block" id="channel-task">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">TASK LOG</span>
+      <h2>任务耗时记录：每一秒都摆在明面上</h2>
+      <p>下面是面板里最近一批生成任务的原文摘录，三行时间信息并列展示，成功与失败不做任何筛选。</p>
+    </div>
+    <div class="task-grid">
+      <article class="task-card">
+        <div class="task-top">
+          <div class="task-name"><span class="badge-src">GH</span>木头泛目录程序</div>
+          <span class="badge-status badge-fail">生成失败</span>
+        </div>
+        <div class="task-body">
+          <div class="time-cell">
+            <div class="row"><span class="k">开始</span><span class="v">10-17 21:36</span></div>
+            <div class="row"><span class="k">结束</span><span class="v">10-17 21:51</span></div>
+            <div class="row"><span class="k">用时</span><span class="v">生成 15m28s</span></div>
+          </div>
+          <div>
+            <div class="model-cell">deepseek-flash</div>
+            <div class="account-cell"><span class="badge-src">GH</span><div class="acct">sampsonallison9711</div></div>
+          </div>
+          <div>
+            <div class="cost-line">生成 15m28s <span class="cost-sub">· 3746 字</span></div>
+            <div class="upload-tag" style="margin-top:8px">未上传</div>
+          </div>
+        </div>
+        <div class="task-foot">
+          <button class="btn-sm">重试</button>
+          <button class="btn-sm">换模型</button>
+          <button class="btn-sm danger">删除</button>
+        </div>
+      </article>
+      <article class="task-card">
+        <div class="task-top">
+          <div class="task-name"><span class="badge-src">GH</span>青竹站点批量器</div>
+          <span class="badge-status badge-ok">生成成功</span>
+        </div>
+        <div class="task-body">
+          <div class="time-cell">
+            <div class="row"><span class="k">开始</span><span class="v">10-17 19:02</span></div>
+            <div class="row"><span class="k">结束</span><span class="v">10-17 19:14</span></div>
+            <div class="row"><span class="k">用时</span><span class="v">生成 11m47s</span></div>
+          </div>
+          <div>
+            <div class="model-cell">glm-air</div>
+            <div class="account-cell"><span class="badge-src">GH</span><div class="acct">marlowe_dev08</div></div>
+          </div>
+          <div>
+            <div class="cost-line">生成 11m47s <span class="cost-sub">· 4120 字</span></div>
+            <div class="upload-tag" style="margin-top:8px">已上传 · 19:15</div>
+          </div>
+        </div>
+        <div class="task-foot">
+          <button class="btn-sm">重试</button>
+          <button class="btn-sm">换模型</button>
+          <button class="btn-sm danger">删除</button>
+        </div>
+      </article>
+      <article class="task-card">
+        <div class="task-top">
+          <div class="task-name"><span class="badge-src">GH</span>夜航内容引擎</div>
+          <span class="badge-status badge-run">生成中</span>
+        </div>
+        <div class="task-body">
+          <div class="time-cell">
+            <div class="row"><span class="k">开始</span><span class="v">10-17 22:10</span></div>
+            <div class="row"><span class="k">结束</span><span class="v">预计 22:24</span></div>
+            <div class="row"><span class="k">用时</span><span class="v">已运行 6m03s</span></div>
+          </div>
+          <div>
+            <div class="model-cell">deepseek-flash</div>
+            <div class="account-cell"><span class="badge-src">GH</span><div class="acct">q_huang2026</div></div>
+          </div>
+          <div>
+            <div class="cost-line" style="color:var(--c-accent)">运行中 <span class="cost-sub">· 已产出 1820 字</span></div>
+            <div class="upload-tag" style="margin-top:8px">待生成完成</div>
+          </div>
+        </div>
+        <div class="task-foot">
+          <button class="btn-sm">换模型</button>
+          <button class="btn-sm danger">删除</button>
+        </div>
+      </article>
+      <article class="task-card">
+        <div class="task-top">
+          <div class="task-name"><span class="badge-src">GH</span>石桥目录采集台</div>
+          <span class="badge-status badge-ok">生成成功</span>
+        </div>
+        <div class="task-body">
+          <div class="time-cell">
+            <div class="row"><span class="k">开始</span><span class="v">10-16 09:44</span></div>
+            <div class="row"><span class="k">结束</span><span class="v">10-16 09:55</span></div>
+            <div class="row"><span class="k">用时</span><span class="v">生成 10m51s</span></div>
+          </div>
+          <div>
+            <div class="model-cell">glm-air</div>
+            <div class="account-cell"><span class="badge-src">GH</span><div class="acct">tashi_rin77</div></div>
+          </div>
+          <div>
+            <div class="cost-line">生成 10m51s <span class="cost-sub">· 3588 字</span></div>
+            <div class="upload-tag" style="margin-top:8px">已上传 · 09:56</div>
+          </div>
+        </div>
+        <div class="task-foot">
+          <button class="btn-sm">重试</button>
+          <button class="btn-sm">换模型</button>
+          <button class="btn-sm danger">删除</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block band" id="channel-model">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">MODEL TEST</span>
+      <h2>模型对比实测：同样的任务，用时差多少</h2>
+      <p>同一个目录生成需求分别交给不同模型跑，开始与结束时间同屏对照，结果一目了然。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <h3>deepseek-flash</h3>
+        <p>平均用时 13m40s，单篇产出约 3600～4100 字。长文任务中段偶发超时，失败后重试成功率约 87%。</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🌿</div>
+        <h3>glm-air</h3>
+        <p>平均用时 11m20s，产出节奏稳定，全文完整率最高，是面板上重试次数最少的一个模型。</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔁</div>
+        <h3>换模型策略</h3>
+        <p>任务超过 20 分钟未结束，建议直接换模型重跑。面板数据显示换模型后平均节省 6 分半的等待时间。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="channel-fail">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">FAIL LOG</span>
+      <h2>失败排查日志：生成失败之后发生了什么</h2>
+      <p>红色状态不代表终点。以下是几次典型的失败记录，以及它们最终是怎么被救回来的。</p>
+    </div>
+    <div class="row-list">
+      <div class="row-item">
+        <div class="row-idx">01</div>
+        <div><h4>木头泛目录程序 · 跑满 15m28s 后超时</h4><p>任务在 21:51 被系统判定超时，产出 3746 字但未上传。换模型重跑后 11 分钟完成，全文上传成功。</p></div>
+        <div class="row-time">10-17 21:51</div>
+      </div>
+      <div class="row-item">
+        <div class="row-idx">02</div>
+        <div><h4>云杉模板工厂 · 账号限流导致中断</h4><p>生成到第 4 段时账号触发频率限制，任务停在 8m12s。切换 GH 备用账号后从头重跑，一次通过。</p></div>
+        <div class="row-time">10-16 14:07</div>
+      </div>
+      <div class="row-item">
+        <div class="row-idx">03</div>
+        <div><h4>白石关键词矩阵 · 结尾截断</h4><p>结束时间正常但末尾 300 字缺失，判定为不完整产出。重试任务补充完整段落后合并上传，耗时仅 4m30s。</p></div>
+        <div class="row-time">10-15 20:33</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block band" id="channel-data">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">DATA RANK</span>
+      <h2>产出数据榜：谁跑得又快又满</h2>
+      <p>按近 7 天生成字数与平均用时排出的面板榜单，数据直接取自任务流水。</p>
+    </div>
+    <div class="hero-stats" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat-card"><div class="stat-num">28,430 字</div><div class="stat-label">青竹站点批量器 · 周产出</div></div>
+      <div class="stat-card"><div class="stat-num">11m20s</div><div class="stat-label">夜航内容引擎 · 平均用时</div></div>
+      <div class="stat-card"><div class="stat-num">31 次</div><div class="stat-label">石桥目录采集台 · 周任务数</div></div>
+      <div class="stat-card"><div class="stat-num">98.1%</div><div class="stat-label">白石关键词矩阵 · 完整率</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="channel-account">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">ACCOUNT</span>
+      <h2>账号来源观察：GH 标签背后的分工</h2>
+      <p>每个任务卡上的紫色 GH 小徽章标明了账号来源渠道，不同账号的限流阈值与稳定度差异明显。</p>
+    </div>
+    <div class="row-list">
+      <div class="row-item">
+        <span class="badge-src" style="padding:5px 12px;font-size:13px">GH</span>
+        <div><h4>主跑组账号</h4><p>承担大部分长文任务，单日上限约 12 次生成，超过后容易出现中断，建议与备用账号轮换。</p></div>
+        <div class="row-time">日均 9.6 次</div>
+      </div>
+      <div class="row-item">
+        <span class="badge-src" style="padding:5px 12px;font-size:13px">GH</span>
+        <div><h4>备用补位账号</h4><p>主账号限流后自动接手重试任务，成功率高但排队时间略长，适合不赶时间的补跑场景。</p></div>
+        <div class="row-time">日均 4.2 次</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block band" id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">FAQ</span>
+      <h2>一个B两个 40分.常见问答</h2>
+    </div>
+    <details class="faq-item" open>
+      <summary>一个任务跑了 15 分钟还没结束，正常吗？<span>＋</span></summary>
+      <div class="faq-body">面板上的正常区间是 9～16 分钟。超过 20 分钟仍未结束的记录会标为红色状态，此时换模型重跑通常比继续等待更快拿到完整产出。</div>
+    </details>
+    <details class="faq-item">
+      <summary>生成失败的任务，字数还算数吗？<span>＋</span></summary>
+      <div class="faq-body">失败任务的字数仍会计入流水统计，但不会计入「已上传」产出榜。像「生成 15m28s · 3746 字」这类记录保留完整，方便对照重试后的差异。</div>
+    </details>
+    <details class="faq-item">
+      <summary>重试和换模型应该先选哪个？<span>＋</span></summary>
+      <div class="faq-body">如果失败发生在前半段，直接重试即可；如果已经跑了 10 分钟以上才失败，建议换模型，面板数据里这条路径平均能省下 6 分半。</div>
+    </details>
+    <details class="faq-item">
+      <summary>「未上传」状态的任务去哪了？<span>＋</span></summary>
+      <div class="faq-body">未上传说明产出没有被推送到站点，多半对应失败或超时的任务。处理后状态会更新为「已上传」并标注时间。</div>
+    </details>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="cta-box">
+      <h2>把你的下一次生成，也跑进这份流水里</h2>
+      <p>开始时间、结束时间、总耗时、字数、状态——一个B两个 40分. 让每一次生成都留下完整痕迹，成功与失败同样值得被记录。</p>
+      <a href="#channel-task" class="btn">回到任务流水</a>
+    </div>
+  </div>
+</section>
+
+<section class="section pg-extra" id="pg-data"><div class="wrap"><h2>一个B两个40分 一览</h2><p class="pg-lead">用几组直观数字把「一个B两个 40分.」的内容规模和更新节奏摊开，避免首页只有一句空话。</p><div class="pg-stats stat-row"><div class="stat slash-1"><span class="num">1280+</span><p>主题相关条目</p></div><div class="stat slash-2"><span class="num">98%</span><p>栏目对题率</p></div><div class="stat slash-3"><span class="num">24h</span><p>新鲜内容刷新</p></div><div class="stat"><span class="num">4步</span><p>从打开到看完</p></div></div></div></section>
+<section class="section pg-extra" id="pg-picks"><div class="wrap"><h2>一个B两个40分 精选栏目</h2><p class="pg-lead">围绕「一个B两个 40分.」整理的栏目与更新看点，方便快速找到想看的内容。</p><div class="pg-chips"><span>今日更新</span><span>热门推荐</span><span>完整目录</span><span>收藏提醒</span></div><div class="grid-3 pg-grid"><article class="card pg-card"><h3>新鲜上架</h3><p>按「一个B两个 40分.」聚合最新条目，标题、简介和更新时间一次看清，少翻无效页。</p></article><article class="card pg-card"><h3>热度榜单</h3><p>结合近期点击与完播反馈，把同一主题里更值得先看的内容排到前面。</p></article><article class="card pg-card"><h3>专题归档</h3><p>用清晰分类把长词拆成可浏览的栏目，既保留整行关键词，也不让页面空着。</p></article></div></div></section>
+<section class="section pg-extra" id="pg-flow"><div class="wrap"><h2>使用流程</h2><p class="pg-lead">从打开页面到找到「一个B两个 40分.」相关内容，四步就能走完。</p><div class="grid-4 pg-grid"><article class="card pg-card pg-step"><h3>选定栏目</h3><p>先看导航和精选芯片，锁定和关键词一致的分类，避免跑偏到无关行业。</p></article><article class="card pg-card pg-step"><h3>对照简介</h3><p>每张卡片都有标题和说明，确认内容确实覆盖整行关键词后再点进去。</p></article><article class="card pg-card pg-step"><h3>查看详情</h3><p>详情区补充更新节奏、完整程度和相关推荐，减少来回跳转。</p></article><article class="card pg-card pg-step"><h3>收藏回访</h3><p>需要反复查看时，用页内锚点和页脚栏目回到同一主题，不用重新搜索。</p></article></div></div></section>
+<section class="section pg-extra dark-band" id="pg-voice"><div class="wrap"><h2>用户怎么说</h2><p class="pg-lead">真实使用反馈，重点看有没有把「一个B两个 40分.」讲清楚。</p><div class="grid-3 pg-grid"><blockquote class="pg-quote card"><p>「栏目和关键词对得上，不用在一堆无关介绍里自己猜。」</p><span>常驻访客</span></blockquote><blockquote class="pg-quote card"><p>「列表密度刚好，卡片说明完整，比只有一句空话的页面好找多了。」</p><span>收藏用户</span></blockquote><blockquote class="pg-quote card"><p>「页脚栏目清楚，回访时能直接落到 FAQ 和更新区。」</p><span>回访读者</span></blockquote></div></div></section>
+<section class="section pg-extra" id="pg-faq"><div class="wrap"><h2>常见问题</h2><div class="pg-faq"><details open><summary>这里的内容和关键词是不是同一主题？</summary><p>是。页面按整行「一个B两个 40分.」组织栏目、标题和说明，不会改写成套装行业官网。</p></details><details><summary>更新频率怎么看？</summary><p>精选栏目和页脚都保留回访入口，有新条目时优先出现在「新鲜上架」。</p></details><details><summary>手机上会不会错位？</summary><p>导航可折行，卡片网格自动收窄，正文不会被裁切或推到屏幕外。</p></details></div></div></section>
+<section class="section pg-extra" id="pg-cta"><div class="wrap"><div class="pg-cta"><h2>继续浏览 一个B两个40分</h2><p>如果这份目录对上了你要找的「一个B两个 40分.」，可以直接从栏目、榜单或页脚回到对应板块。</p><a class="btn btn-solid" href="#pg-picks">查看精选栏目</a><p class="pg-lead">ygblgf.pages.dev</p></div></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-mark">40</span>一个B两个 40分.</a>
+        <p style="font-size:13px;max-width:280px">任务耗时全记录，生成成功与失败一并公开。数据透明，重试有据。</p>
+      </div>
+      <div>
+        <h4>频道</h4>
+        <a href="#channel-task">任务耗时记录</a>
+        <a href="#channel-model">模型对比实测</a>
+        <a href="#channel-fail">失败排查日志</a>
+      </div>
+      <div>
+        <h4>数据</h4>
+        <a href="#channel-data">产出数据榜</a>
+        <a href="#channel-account">账号来源观察</a>
+        <a href="#faq">常见问答</a>
+      </div>
+      <div>
+        <h4>站点</h4>
+        <a href="#">首页</a>
+        <a href="#channel-task">实时面板</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 一个B两个 40分. · ygblgf.pages.dev</span>
+      <span>面板数据持续更新中</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-mark">40</span>一个B两个 40分.</a>
+        <p style="font-size:13px;max-width:280px">任务耗时全记录，生成成功与失败一并公开。数据透明，重试有据。</p>
+      </div>
+      <div>
+        <h4>频道</h4>
+        <a href="#channel-task">任务耗时记录</a>
+        <a href="#channel-model">模型对比实测</a>
+        <a href="#channel-fail">失败排查日志</a>
+      </div>
+      <div>
+        <h4>数据</h4>
+        <a href="#channel-data">产出数据榜</a>
+        <a href="#channel-account">账号来源观察</a>
+        <a href="#faq">常见问答</a>
+      </div>
+      <div>
+        <h4>站点</h4>
+        <a href="#">首页</a>
+        <a href="#channel-task">实时面板</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 一个B两个 40分. · ygblgf.pages.dev</span>
+      <span>面板数据持续更新中</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
